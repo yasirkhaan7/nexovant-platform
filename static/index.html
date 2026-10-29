@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexovant Technologies | Cloud ERP Exports & Shareholder Portal</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: #111827;
+      --border: #1f2937;
+      --accent: #10b981;
+      --gold: #f59e0b;
+      --blue: #3b82f6;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; padding: 1.5rem 2rem; max-width: 1200px; margin: 0 auto; }
+    header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+    .brand { font-size: 1.4rem; font-weight: 800; color: var(--accent); letter-spacing: 0.8px; }
+    .nav-tabs { display: flex; gap: 0.5rem; }
+    .tab-btn { background: var(--card); color: var(--muted); border: 1px solid var(--border); padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600; width: auto; margin: 0; }
+    .tab-btn.active { background: var(--accent); color: #052e16; border-color: var(--accent); }
+    .section { display: none; padding-top: 2rem; }
+    .section.active { display: block; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .kpi { background: var(--card); border: 1px solid var(--border); padding: 1.25rem; border-radius: 10px; }
+    .kpi span { font-size: 0.8rem; color: var(--muted); display: block; }
+    .kpi strong { font-size: 1.4rem; color: var(--accent); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+    .card h2 { font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--gold); }
+    .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700; background: rgba(16,185,129,0.15); color: var(--accent); }
+    label { display: block; font-size: 0.82rem; color: var(--muted); margin-top: 0.75rem; }
+    input, select { width: 100%; padding: 0.6rem; margin-top: 0.25rem; border-radius: 6px; border: 1px solid #374151; background: #030712; color: white; }
+    button { margin-top: 1.1rem; width: 100%; padding: 0.7rem; background: var(--accent); color: #052e16; font-weight: 700; border: none; border-radius: 6px; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.88rem; }
+    th, td { text-align: left; padding: 0.65rem; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 600; }
+    .msg { margin-top: 0.75rem; font-size: 0.85rem; color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <div class="brand">NEXOVANT TECHNOLOGIES</div>
+      <small style="color: var(--muted);">Cloud ERP & Global Software Exports • SBP Code 9186 • Future PSX GEM Candidate</small>
+    </div>
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('storefront', this)">1. B2B ERP & Exports</button>
+      <button class="tab-btn" onclick="switchTab('investors', this)">2. Investor Portal</button>
+      <button class="tab-btn" onclick="switchTab('admin', this)">3. Founder Audit Ledger</button>
+    </div>
+  </header>
+
+  <!-- TAB 1: B2B SOFTWARE EXPORT STOREFRONT -->
+  <div id="storefront" class="section active">
+    <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Enterprise Software Built in Pakistan for Global Markets</h1>
+    <p style="color: var(--muted); margin-bottom: 2rem;">Every software license and international development sprint generates verified USD inflows under Pakistan Software Export Board (PSEB) regulations.</p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="badge">Flagship B2B SaaS</span>
+        <h2 style="margin-top: 0.5rem;">FinCore / Lumetra Cloud ERP</h2>
+        <p style="font-size: 0.9rem; color: var(--muted);">Multi-tenant Accounting, Inventory, Procurement, HR & Financial Ledger built on Flutter, Python FastAPI, and PostgreSQL.</p>
+        <ul style="margin: 1rem 0 1rem 1.2rem; font-size: 0.88rem; color: #d1d5db;">
+          <li>Automated double-entry general ledger & tax reporting</li>
+          <li>Supply chain, procurement & warehouse stock tracking</li>
+          <li>Cross-platform Desktop, Web & Mobile access</li>
+        </ul>
+        <strong style="color: var(--accent); font-size: 1.1rem;">$199 / month or $2,400 Enterprise Deployment</strong>
+      </div>
+
+      <div class="card">
+        <h2>Request B2B Software Deployment Quote</h2>
+        <p style="font-size: 0.85rem; color: var(--muted);">For international & corporate clients seeking ERP deployment or dedicated engineering pods.</p>
+        <form onsubmit="submitLead(event)">
+          <label>Company / Organization Name</label>
+          <input type="text" id="leadCompany" required placeholder="e.g. Horizon Logistics LLC" />
+          <label>Work Email</label>
+          <input type="email" id="leadEmail" required placeholder="cto@horizon.com" />
+          <label>Solution Tier</label>
+          <select id="leadTier">
+            <option value="Cloud ERP Enterprise License">Cloud ERP Enterprise License ($2,400+)</option>
+            <option value="Dedicated Flutter + FastAPI Pod">Dedicated Flutter + FastAPI Pod ($3,000/mo)</option>
+            <option value="Custom AI & Data Analytics Suite">Custom AI & Data Analytics Suite ($1,800+)</option>
+          </select>
+          <label>Estimated Project Budget (USD)</label>
+          <input type="number" id="leadBudget" required value="2500" />
+          <button type="submit">Submit Commercial Inquiry</button>
+        </form>
+        <div id="leadMsg" class="msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: INVESTOR RELATIONS & WAITLIST -->
+  <div id="investors" class="section">
+    <div class="kpi-grid">
+      <div class="kpi"><span>Verified Quarterly Export Revenue</span><strong id="kpiUsd">$0</strong></div>
+      <div class="kpi"><span>Gross Inflow (PKR)</span><strong id="kpiGrossPkr">PKR 0</strong></div>
+      <div class="kpi"><span>Net Profit After 0.25% Tax & Ops</span><strong id="kpiNetPkr">PKR 0</strong></div>
+      <div class="kpi"><span>Quarterly Shareholder Dividend Pool (60%)</span><strong id="kpiDivPkr" style="color: var(--gold);">PKR 0</strong></div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Join Private Shareholder Waitlist (SECP Form-3 Track)</h2>
+        <p style="font-size: 0.85rem; color: var(--muted);">Register interest for private equity allocation. Dividends are paid quarterly from verified net export profits after deducting statutory FBR Withholding Tax (15% for Filers).</p>
+        <form onsubmit="submitWaitlist(event)">
+          <label>Full Legal Name (As on CNIC)</label>
+          <input type="text" id="fullName" required placeholder="e.g. Yasir Khan" />
+          <label>Email Address</label>
+          <input type="email" id="email" required placeholder="investor@example.com" />
+          <label>WhatsApp Number</label>
+          <input type="text" id="whatsapp" required placeholder="+92 300 0000000" />
+          <label>Intended Equity Allocation (PKR)</label>
+          <input type="number" id="intendedPkr" required value="250000" step="10000" />
+          <label>FBR Active Taxpayer Status</label>
+          <select id="isFiler">
+            <option value="true">Active FBR Filer (15% Dividend WHT)</option>
+            <option value="false">Non-Filer (30% Dividend WHT)</option>
+          </select>
+          <button type="submit">Register Shareholder Interest</button>
+        </form>
+        <div id="waitlistMsg" class="msg"></div>
+      </div>
+
+      <div class="card">
+        <h2>Projected Shareholder Dividend Distribution Table</h2>
+        <p style="font-size: 0.83rem; color: var(--muted);">Live calculation of quarterly payouts based on current export invoices in the ledger and investor tax status.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Investor</th>
+              <th>Allocation</th>
+              <th>Pool %</th>
+              <th>FBR WHT</th>
+              <th>Net Quarterly Payout</th>
+            </tr>
+          </thead>
+          <tbody id="investorTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: FOUNDER & AUDIT COMMAND CENTER -->
+  <div id="admin" class="section">
+    <div class="grid">
+      <div class="card">
+        <h2>Log New Export Invoice (SBP Code 9186)</h2>
+        <p style="font-size: 0.85rem; color: var(--muted);">Record new international client payments and Bank PRC references to update the live quarterly dividend pool.</p>
+        <form onsubmit="submitInvoice(event)">
+          <label>Foreign Client / Company Name</label>
+          <input type="text" id="invClient" required placeholder="e.g. Gulf Tech Solutions LLC" />
+          <label>Client Country</label>
+          <input type="text" id="invCountry" required placeholder="UAE / USA / UK" />
+          <label>Software / Service Delivered</label>
+          <input type="text" id="invService" required placeholder="Cloud ERP Annual License" />
+          <label>Invoice Amount (USD)</label>
+          <input type="number" id="invUsd" required value="2000" />
+          <label>Bank PRC Certificate Reference</label>
+          <input type="text" id="invPrc" required placeholder="PRC-9186-2026-003" />
+          <button type="submit">Record Export Invoice in Ledger</button>
+        </form>
+        <div id="invMsg" class="msg"></div>
+      </div>
+
+      <div class="card">
+        <h2>Verified Export Invoices (Audit Trail for SECP & PSX)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Country</th>
+              <th>PRC Ref</th>
+              <th>Amount (USD)</th>
+            </tr>
+          </thead>
+          <tbody id="invoiceTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+      loadDashboard();
+    }
+
+    async function loadDashboard() {
+      const res = await fetch('/api/dashboard');
+      const data = await res.json();
+      const m = data.metrics;
+
+      document.getElementById('kpiUsd').innerText = '$' + m.total_export_usd.toLocaleString();
+      document.getElementById('kpiGrossPkr').innerText = 'PKR ' + m.gross_export_pkr.toLocaleString();
+      document.getElementById('kpiNetPkr').innerText = 'PKR ' + m.net_profit_pkr.toLocaleString();
+      document.getElementById('kpiDivPkr').innerText = 'PKR ' + m.dividend_pool_pkr.toLocaleString();
+
+      const invBody = document.getElementById('invoiceTableBody');
+      invBody.innerHTML = data.invoices.map(i => `
+        <tr>
+          <td><strong>${i.client_name}</strong><br><small style="color:var(--muted)">${i.service_type}</small></td>
+          <td>${i.country}</td>
+          <td><code>${i.prc_reference}</code></td>
+          <td style="color:var(--accent); font-weight:700;">$${i.amount_usd.toLocaleString()}</td>
+        </tr>
+      `).join('');
+
+      const shBody = document.getElementById('investorTableBody');
+      if (data.investors.length === 0) {
+        shBody.innerHTML = '<tr><td colspan="5" style="color:var(--muted);">No investors on waitlist yet. Add one on the left to see live dividend calculations!</td></tr>';
+      } else {
+        shBody.innerHTML = data.investors.map(sh => `
+          <tr>
+            <td><strong>${sh.full_name}</strong><br><small style="color:var(--muted)">${sh.is_fbr_filer ? 'Filer (15%)' : 'Non-Filer (30%)'}</small></td>
+            <td>PKR ${sh.intended_pkr.toLocaleString()}</td>
+            <td>${sh['equity_ pool_share_pct']}%</td>
+            <td style="color:#ef4444;">-PKR ${sh.wht_tax_pkr.toLocaleString()}</td>
+            <td style="color:var(--gold); font-weight:700;">PKR ${sh.net_dividend_pkr.toLocaleString()}</td>
+          </tr>
+        `).join('');
+      }
+    }
+
+    async function submitLead(e) {
+      e.preventDefault();
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          company_name: document.getElementById('leadCompany').value,
+          contact_email: document.getElementById('leadEmail').value,
+          solution_tier: document.getElementById('leadTier').value,
+          estimated_usd: parseFloat(document.getElementById('leadBudget').value)
+        })
+      });
+      const out = await res.json();
+      document.getElementById('leadMsg').innerText = out.message;
+      e.target.reset();
+    }
+
+    async function submitWaitlist(e) {
+      e.preventDefault();
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          full_name: document.getElementById('fullName').value,
+          email: document.getElementById('email').value,
+          whatsapp: document.getElementById('whatsapp').value,
+          intended_pkr: parseFloat(document.getElementById('intendedPkr').value),
+          is_fbr_filer: document.getElementById('isFiler').value === 'true'
+        })
+      });
+      const out = await res.json();
+      document.getElementById('waitlistMsg').innerText = out.message;
+      e.target.reset();
+      loadDashboard();
+    }
+
+    async function submitInvoice(e) {
+      e.preventDefault();
+      const res = await fetch('/api/invoices', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          client_name: document.getElementById('invClient').value,
+          country: document.getElementById('invCountry').value,
+          service_type: document.getElementById('invService').value,
+          amount_usd: parseFloat(document.getElementById('invUsd').value),
+          prc_reference: document.getElementById('invPrc').value
+        })
+      });
+      const out = await res.json();
+      document.getElementById('invMsg').innerText = out.message;
+      e.target.reset();
+      loadDashboard();
+    }
+
+    loadDashboard();
+  </script>
+</body>
+</html>
